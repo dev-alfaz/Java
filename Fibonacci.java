@@ -1,19 +1,21 @@
-
 import java.util.Scanner;
 
-public class Factorial {
+public class Fibonacci {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter a number: ");
-        int num = sc.nextInt();
-        long factorial = 1;
+        System.out.print("Enter the number of terms: ");
+        int terms = sc.nextInt();
 
-        for (int i = 1; i <= num; i++) {
-            factorial *= i;
+        int a = 0, b = 1;
+        System.out.print("Fibonacci Series: " + a + " " + b);
+
+        for (int i = 2; i < terms; i++) {
+            int next = a + b;
+            System.out.print(" " + next);
+            a = b;
+            b = next;
         }
-
-        System.out.println("Factorial of " + num + " is: " + factorial);
 
         sc.close();
     }
